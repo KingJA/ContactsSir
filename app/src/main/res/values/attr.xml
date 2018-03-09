@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IndexView">
+        <attr name="indexColorNor" format="color|reference"/>
+        <attr name="indexColorSel" format="color|reference"/>
+        <attr name="indexTextSize" format="dimension"/>
+    </declare-styleable>
+</resources>
