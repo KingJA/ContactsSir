@@ -1,4 +1,4 @@
-package sample.kingja.contactssir;
+package com.kingja.contactssir;
 
 import java.util.Comparator;
 

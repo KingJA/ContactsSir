@@ -1,4 +1,4 @@
-package sample.kingja.contactssir;
+package com.kingja.contactssir;
 
 import android.content.Context;
 import android.content.res.TypedArray;

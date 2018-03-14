@@ -7,6 +7,8 @@ import android.widget.BaseAdapter;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
 
+import com.kingja.contactssir.Contacts;
+
 import java.util.List;
 
 /**

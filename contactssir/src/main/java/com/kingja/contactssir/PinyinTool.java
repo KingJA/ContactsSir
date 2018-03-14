@@ -1,4 +1,4 @@
-package sample.kingja.contactssir;
+package com.kingja.contactssir;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;
@@ -27,38 +27,31 @@ public class PinyinTool {
         format.setToneType(HanyuPinyinToneType.WITHOUT_TONE);
     }
 
-    public String toPinYin(String str)  {
+    public String toPinYin(String str) {
         return toPinYin(str, "", Type.UPPERCASE);
     }
 
-    public String toPinYin(String str, String spera)  {
+    public String toPinYin(String str, String spera) {
         return toPinYin(str, spera, Type.UPPERCASE);
     }
 
-    /**
-     * 将str转换成拼音，如果不是汉字或者没有对应的拼音，则不作转换
-     * 如： 明天 转换成 MINGTIAN
-     *
-     * @param str
-     * @param spera
-     * @return
-     * @throws BadHanyuPinyinOutputFormatCombination
-     */
-    public String toPinYin(String str, String spera, Type type)  {
-        if (str == null || str.trim().length() == 0)
+    public String toPinYin(String str, String spera, Type type) {
+        if (str == null || str.trim().length() == 0) {
             return "";
-        if (type == Type.UPPERCASE)
+        }
+        if (type == Type.UPPERCASE) {
             format.setCaseType(HanyuPinyinCaseType.UPPERCASE);
-        else
+        } else {
             format.setCaseType(HanyuPinyinCaseType.LOWERCASE);
+        }
 
         String py = "";
         String temp = "";
-        String[] t=null;
+        String[] t = null;
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             if ((int) c <= 128) {
-                py += c;
+                py += String.valueOf(c).toUpperCase();
             } else {
                 try {
                     t = PinyinHelper.toHanyuPinyinStringArray(c, format);
@@ -71,7 +64,7 @@ public class PinyinTool {
                     try {
                         temp = t[0];
                     } catch (ArrayIndexOutOfBoundsException e) {
-                        temp="#";
+                        temp = "#";
                     }
 
                     if (type == Type.FIRSTUPPER) {
